@@ -63,3 +63,19 @@ def query(request):
     <h1>没有相关文章</h1>
 
 ```
+
+>其他
+
+```python
+
+除此之外，还有变量名替换
+----{% with %}:用更简单的变量名替代复杂的变量名-----
+{% with total=fasdsadasda% %} {{ total}} {% endwith %}
+----{% verbatim %}:禁止render-----
+{% verbatim %}
+	{{ hello }}
+{% endverbatim %}
+此时渲染出来就是{{hello}}
+----{% load %}:加载标签库-----
+```
+
