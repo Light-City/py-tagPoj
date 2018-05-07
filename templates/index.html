@@ -1,3 +1,4 @@
+{% load myTag %} <!--加载自定义filter-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,5 +54,11 @@
     <p><input type="submit" value="提交"></p>
     {% csrf_token %}
 </form>
+<!--以下为自定义filter-->
+<p>{{ d.age }}</p>
+<p>{{ d.age|filter_multi:3 }}</p> <!--自定义filter d.age*3-->
+<p>{% simple_tag_multi d.age 5 6 7 %}</p> <!--自定义tag d.age*5*6*7-->
+<!--filter与tag都是实现自定义template，而前者传一个值，后者可传多个值,tag不能用在控制语句中，即控制语句中必须只能用filter-->
+
 </body>
 </html>
